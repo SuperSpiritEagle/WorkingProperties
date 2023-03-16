@@ -15,32 +15,33 @@ namespace Working_Properties
 
         class Player
         {
-            public int PositionX { get;}
-            public int PositionY { get;}
-
             public Player(int positionX,int positionY)
             {
                 PositionX = positionX;
                 PositionY = positionY;
             }
+
+            public int PositionX { get; }
+            public int PositionY { get; }
         }
 
         class Renderer
         {
-            private string _player;
-            public Renderer(string player)
+            private string _symbol;
+
+            public Renderer(string symbol)
             {
-                _player = player;
+                _symbol = symbol;
+            }
+
+            public void SetCursor(int positionX, int positionY)
+            {
+                Console.SetCursorPosition(positionX, positionY);
             }
 
             public void Print()
             {
-                Console.WriteLine(_player);
-            }
-
-            public void SetCursor(int positionX,int positionY)
-            {
-                Console.SetCursorPosition(positionX, positionY);
+                Console.WriteLine(_symbol);
             }
         }
     }
